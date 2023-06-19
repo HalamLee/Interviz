@@ -1,21 +1,64 @@
 import { theme } from '@/styles/theme';
+import Image from 'next/image';
 import { styled } from 'styled-components';
 
 type Props = {
   back?: boolean;
+  TextColor?: 'white' | 'main';
 };
 
-const Header = ({ back }: Props) => {
-  return back ? <Wrapper back>돌아가기</Wrapper> : <Wrapper>헤더</Wrapper>;
+const handleBack = () => {
+  window.history.back();
+};
+
+const Header = ({ back, TextColor }: Props) => {
+  return back ? (
+    <NoShadowWrapper TextColor={TextColor}>
+      <BtnWrapper onClick={handleBack}>
+        <Image
+          src={`/svg/left-arrow-${TextColor}.svg`}
+          width={8}
+          height={15}
+          alt="arrow"
+        />
+        돌아가기
+      </BtnWrapper>
+    </NoShadowWrapper>
+  ) : (
+    <ShadowWrapper>헤더</ShadowWrapper>
+  );
 };
 
 export default Header;
 
-const Wrapper = styled.div<{ back?: boolean }>`
+const Basic = styled.div`
   width: 100%;
   height: 68px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${(props) => (props.back ? '' : theme.shadows.large)}
+  font-size: 20px;
+  color: ${theme.colors.main};
+  ${theme.center};
+`;
+
+const ShadowWrapper = styled(Basic)`
+  ${theme.shadows.large};
+  font-weight: 900;
+`;
+
+const NoShadowWrapper = styled(Basic)<{ TextColor?: 'white' | 'main' }>`
+  padding-left: 35px;
+  width: calc(100% - 35px);
+  font-weight: 700;
+  justify-content: start;
+  flex-direction: row;
+  gap: 16px;
+  color: ${(props) => props.TextColor};
+  background-color: ${(props) =>
+    props.TextColor === 'main' ? theme.colors.white : theme.colors.main};
+`;
+
+const BtnWrapper = styled.div`
+  cursor: pointer;
+  & :first-child {
+    margin-right: 16px;
+  }
 `;
