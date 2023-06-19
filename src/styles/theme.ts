@@ -18,6 +18,7 @@ const shadows = {
 
 const center = `
 display:flex;
+flex-direction:column;
 justify-content: center;
 align-items: center;
 `;
