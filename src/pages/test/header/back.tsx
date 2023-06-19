@@ -8,7 +8,7 @@ const BackHeader = () => {
 BackHeader.getLayout = function getLayout(page: React.ReactElement) {
   return (
     <Layout>
-      <Header back />
+      <Header back TextColor="main" />
       {page}
     </Layout>
   );
