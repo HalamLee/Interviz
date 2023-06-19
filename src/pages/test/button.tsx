@@ -1,4 +1,4 @@
-import Button from '@/components/button/Button';
+import Button from '@/components/button';
 import { theme } from '@/styles/theme';
 import { styled } from 'styled-components';
 
