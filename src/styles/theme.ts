@@ -14,10 +14,30 @@ const shadows = {
   small: `box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16)`,
 };
 
+const breakpoints = {
+  mobile1: '375px',
+  mobile2: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  desktop: '1440px',
+} as const;
+
+const mediaQuery = (maxWidth: string) => `@media (max-width: ${maxWidth})`;
+
+const media = {
+  mobile1: mediaQuery(breakpoints.mobile1),
+  mobile2: mediaQuery(breakpoints.mobile2),
+  tablet: mediaQuery(breakpoints.tablet),
+  laptop: mediaQuery(breakpoints.laptop),
+  desktop: mediaQuery(breakpoints.desktop),
+} as const;
+
 export type ColorsTypes = typeof colors;
 export type ShadowsTypes = typeof shadows;
+export type MediaTypes = typeof media;
 
 export const theme: DefaultTheme = {
   colors,
   shadows,
+  media,
 };
