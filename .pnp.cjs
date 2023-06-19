@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@next/font", "npm:13.4.6"],\
             ["@types/axios", "npm:0.14.0"],\
             ["@types/node", "npm:20.3.1"],\
             ["@types/react", "npm:18.2.12"],\
@@ -2857,6 +2858,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@next/font", [\
+        ["npm:13.4.6", {\
+          "packageLocation": "./.yarn/cache/@next-font-npm-13.4.6-4cac62319f-9c75c145d8.zip/node_modules/@next/font/",\
+          "packageDependencies": [\
+            ["@next/font", "npm:13.4.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@next/swc-darwin-arm64", [\
         ["npm:13.4.6", {\
           "packageLocation": "./.yarn/unplugged/@next-swc-darwin-arm64-npm-13.4.6-01914f4492/node_modules/@next/swc-darwin-arm64/",\
@@ -5423,6 +5433,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["interviz", "workspace:."],\
+            ["@next/font", "npm:13.4.6"],\
             ["@types/axios", "npm:0.14.0"],\
             ["@types/node", "npm:20.3.1"],\
             ["@types/react", "npm:18.2.12"],\

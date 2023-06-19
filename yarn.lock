@@ -1661,6 +1661,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^13.4.6":
+  version: 13.4.6
+  resolution: "@next/font@npm:13.4.6"
+  checksum: 9c75c145d8002b4031335a6d8b868a329138f580f4ce70c71c8734f600ea2b7f3af99ccaede5e1ed57b019001fb1928b313f18b00bca97fcbacbef24c57b0151
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:13.4.6":
   version: 13.4.6
   resolution: "@next/swc-darwin-arm64@npm:13.4.6"
@@ -3747,6 +3754,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "interviz@workspace:."
   dependencies:
+    "@next/font": ^13.4.6
     "@types/axios": ^0.14.0
     "@types/node": 20.3.1
     "@types/react": 18.2.12
