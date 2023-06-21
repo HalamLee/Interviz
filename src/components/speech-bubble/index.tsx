@@ -17,7 +17,7 @@ const Wrapper = styled.div<{ type?: 'color' }>`
   padding: 20px;
   width: 70%;
   height: fit-content;
-  word-break: break-all;
+  word-break: keep-all;
   line-height: 160%;
   font-weight: ${(props) => (props.type ? '700' : '500')};
   color: ${(props) => (props.type ? theme.colors.white : theme.colors.main)};
