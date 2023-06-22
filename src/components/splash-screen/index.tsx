@@ -34,7 +34,8 @@ const TextWrapper = styled.div`
   width: 100%;
   ${theme.center};
   gap: 24px;
-  font-family: TheJamsil5Bold;
+  font-family: 'TheJamsil5Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 24px;
   color: ${theme.colors.white};
   font-weight: 500;
