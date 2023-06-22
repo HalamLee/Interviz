@@ -64,13 +64,13 @@ const Main = () => {
         </InputWrapper>
         <SelectWrapper>
           <CustomSelect
-            initialText={'개발 직군을 선택해주세요.'}
+            initialText={'연차를 선택해주세요.'}
             optionData={YEARS_OF_EXPERIENCE}
             width={'70%'}
             setSelect={onChangeHandler.yearSelect}
           />
           <CustomSelect
-            initialText={'연차를 선택해주세요.'}
+            initialText={'개발 직군을 선택해주세요.'}
             optionData={PART_OF_DEVELOPMENT}
             width={'70%'}
             setSelect={onChangeHandler.partSelect}
