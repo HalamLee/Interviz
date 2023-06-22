@@ -9,7 +9,7 @@ function SplashScreen() {
     <Wrapper>
       <TextWrapper>
         <LogoWrapper>
-          <Image src={'/svg/logo.svg'} fill alt="logo" />
+          <Image src={'/svg/logo.svg'} fill alt="logo" priority />
         </LogoWrapper>
         <span>chatGPT로 기술면접 준비하기</span>
       </TextWrapper>
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   height: 100vh;
   background-color: ${theme.colors.main};
   ${theme.center};
-  gap: 36px;
+  gap: 90px;
 `;
 
 const TextWrapper = styled.div`
