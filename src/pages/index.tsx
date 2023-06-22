@@ -143,5 +143,7 @@ const SelectWrapper = styled.div`
   ${theme.media.mobile2} {
     flex-direction: column;
     gap: 20px;
+    margin-top: -20px;
+    margin-bottom: 40px;
   }
 `;
