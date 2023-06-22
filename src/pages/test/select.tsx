@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import CustomSelect from '@/components/select';
+import CustomSelect from '@components/select';
 
 const Select = () => {
   return (

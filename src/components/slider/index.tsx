@@ -1,8 +1,8 @@
 import { Slider as MUISlider } from '@mui/material';
 import { styled } from 'styled-components';
-import { theme } from '@/styles/theme';
+import { theme } from '@styles/theme';
 import { useEffect, useState } from 'react';
-import notoSansKr from '@/styles/font';
+import notoSansKr from '@styles/font';
 
 type Props = {
   width: number;

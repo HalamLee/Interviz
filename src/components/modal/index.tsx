@@ -1,7 +1,7 @@
-import { theme } from '@/styles/theme';
+import { theme } from '@styles/theme';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import Button from '@/components/button';
+import Button from '@components/button';
 
 type Props = {
   isOpen: boolean;

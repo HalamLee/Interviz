@@ -1,5 +1,5 @@
-import SpeechBubble from '@/components/speech-bubble';
-import { theme } from '@/styles/theme';
+import SpeechBubble from '@components/speech-bubble';
+import { theme } from '@styles/theme';
 import { styled } from 'styled-components';
 
 const SpeechBubbleTest = () => {
