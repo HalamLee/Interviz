@@ -5,22 +5,21 @@ import { useEffect, useState } from 'react';
 import notoSansKr from '@styles/font';
 
 type Props = {
-  width: number;
+  width: string;
+  setSelect: (data: number) => void;
 };
 
 const valuetext = (value: number) => {
   return `${value}개`;
 };
 
-const Slider = ({ width }: Props) => {
+const Slider = ({ width, setSelect }: Props) => {
   const [value, setValue] = useState(5);
   const handleChange = (event: any, newValue: any) => {
     setValue(newValue);
+    setSelect(newValue);
   };
 
-  useEffect(() => {
-    console.log(value);
-  }, [value]);
   return (
     <Wrapper width={width}>
       <CustomSlider
@@ -41,8 +40,8 @@ const Slider = ({ width }: Props) => {
 
 export default Slider;
 
-const Wrapper = styled.div<{ width: number }>`
-  width: ${(props) => props.width}px;
+const Wrapper = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
 `;
 
 const CustomSlider = styled(MUISlider)({

@@ -1,10 +1,19 @@
 import Slider from '@components/slider';
+import { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 
 const SliderTest = () => {
+  const [test, setTest] = useState(5);
+
+  useEffect(() => {
+    console.log({ test });
+  }, [test]);
   return (
     <Wrapper>
-      <Slider width={264} />
+      <Slider
+        width={'264px'}
+        setSelect={(selected: number) => setTest(selected)}
+      />
     </Wrapper>
   );
 };
