@@ -6,12 +6,17 @@ type Props = {
   initialText: string;
   optionData: string[];
   width: string;
+  setSelect: (data: string) => void;
 };
 
-const CustomSelect = ({ initialText, optionData, width }: Props) => {
-  console.log(optionData);
+const CustomSelect = ({ initialText, optionData, width, setSelect }: Props) => {
   const [value, setValue] = useState(initialText);
   const [isOpen, setIsOpen] = useState(false);
+
+  const selectHandler = (data: string) => {
+    setValue(data);
+    setSelect(data);
+  };
 
   return (
     <SelectBox width={width} onClick={() => setIsOpen((prev) => !prev)}>
@@ -19,7 +24,7 @@ const CustomSelect = ({ initialText, optionData, width }: Props) => {
       <SelectOptions show={isOpen ? 'true' : undefined}>
         {isOpen &&
           optionData.map((data) => (
-            <Option key={data} onClick={() => setValue(data)}>
+            <Option key={data} onClick={() => selectHandler(data)}>
               {data}
             </Option>
           ))}
@@ -66,6 +71,7 @@ const SelectOptions = styled.ul<{ show: 'true' | undefined }>`
   border-radius: 8px;
   background-color: ${theme.colors.sub};
   color: #fefefe;
+  z-index: 2;
 `;
 const Option = styled.li`
   font-size: 14px;
