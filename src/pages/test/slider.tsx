@@ -1,4 +1,4 @@
-import Slider from '@/components/slider';
+import Slider from '@components/slider';
 import { styled } from 'styled-components';
 
 const SliderTest = () => {

@@ -1,5 +1,5 @@
-import Button from '@/components/button';
-import { theme } from '@/styles/theme';
+import Button from '@components/button';
+import { theme } from '@styles/theme';
 import { styled } from 'styled-components';
 
 const ButtonTest = () => {

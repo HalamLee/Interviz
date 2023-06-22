@@ -41,7 +41,12 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link
+            href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

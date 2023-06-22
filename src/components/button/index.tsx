@@ -1,5 +1,5 @@
-import notoSansKr from '@/styles/font';
-import { ColorsTypes, theme } from '@/styles/theme';
+import notoSansKr from '@styles/font';
+import { ColorsTypes, theme } from '@styles/theme';
 import { css, styled } from 'styled-components';
 
 type Props = {

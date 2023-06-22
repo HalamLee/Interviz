@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app';
-import notoSansKr from '@/styles/font';
-import GlobalStyle from '@/styles/global-styles';
+import notoSansKr from '@styles/font';
+import GlobalStyle from '@styles/global-styles';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '@/styles/theme';
-import Layout from '@/components/layout';
+import { theme } from '@styles/theme';
+import Layout from '@components/layout';
 
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
