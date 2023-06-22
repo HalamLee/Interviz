@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-styled-components", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.1.3"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-config-next", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:13.4.6"],\
+            ["lottie-react", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.4.0"],\
             ["next", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:13.4.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:18.2.0"],\
@@ -6230,6 +6231,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-styled-components", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.1.3"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-config-next", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:13.4.6"],\
+            ["lottie-react", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.4.0"],\
             ["next", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:13.4.6"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:18.2.0"],\
@@ -6817,6 +6819,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["loose-envify", "npm:1.4.0"],\
             ["js-tokens", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lottie-react", [\
+        ["npm:2.4.0", {\
+          "packageLocation": "./.yarn/cache/lottie-react-npm-2.4.0-d4d95c55aa-e9ea4a89be.zip/node_modules/lottie-react/",\
+          "packageDependencies": [\
+            ["lottie-react", "npm:2.4.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/lottie-react-virtual-0d619875a3/0/cache/lottie-react-npm-2.4.0-d4d95c55aa-e9ea4a89be.zip/node_modules/lottie-react/",\
+          "packageDependencies": [\
+            ["lottie-react", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:2.4.0"],\
+            ["@types/react", "npm:18.2.12"],\
+            ["@types/react-dom", "npm:18.2.5"],\
+            ["lottie-web", "npm:5.12.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:e6e2f725a84369308ddf15965f67be181a410b140ecf707cc70b9d593703ff2ad53f9620a8402165ea61c8b6b1cc847c2b5028409989a8d6884496a68bffebc3#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lottie-web", [\
+        ["npm:5.12.2", {\
+          "packageLocation": "./.yarn/cache/lottie-web-npm-5.12.2-942dc9e22a-af5bc3bc40.zip/node_modules/lottie-web/",\
+          "packageDependencies": [\
+            ["lottie-web", "npm:5.12.2"]\
           ],\
           "linkType": "HARD"\
         }]\
