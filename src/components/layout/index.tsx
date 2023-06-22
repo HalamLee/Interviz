@@ -19,7 +19,7 @@ export default Layout;
 
 const Wrapper = styled.main`
   max-width: 800px;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
 
   background-color: ${theme.colors.white};
