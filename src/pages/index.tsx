@@ -6,10 +6,12 @@ import {
   YEARS_OF_EXPERIENCE,
 } from '@constants/selectInfo';
 import { theme } from '@styles/theme';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { styled } from 'styled-components';
 
 const Main = () => {
+  const router = useRouter();
   const initialData = {
     techStack: '',
     yearsOfExperience: '',
@@ -85,6 +87,10 @@ const Main = () => {
               alert('모두 입력해주세요.');
             } else {
               console.log('데이터 생성 완료:', data);
+              router.push({
+                pathname: '/question',
+                query: { ...data },
+              });
             }
           }}
           color="main"
