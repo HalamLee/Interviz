@@ -3,6 +3,7 @@ import Layout from '@components/layout';
 import Header from '@components/layout/Header';
 import Question from '@components/question';
 import { theme } from '@styles/theme';
+import { useRouter } from 'next/router';
 
 const dummy_data = [
   {
@@ -48,10 +49,20 @@ const dummy_data = [
 ];
 
 const QuestionPage = () => {
+  const router = useRouter();
   return (
     <Wrapper>
       {dummy_data.map((question) => (
-        <Question key={question.id} text={question.text} />
+        <Question
+          key={question.id}
+          text={question.text}
+          onClick={() => {
+            router.push({
+              pathname: '/interview',
+              query: { question: question.text },
+            });
+          }}
+        />
       ))}
     </Wrapper>
   );
