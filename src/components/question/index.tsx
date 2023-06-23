@@ -3,10 +3,11 @@ import { styled } from 'styled-components';
 
 type Props = {
   text: string;
+  onClick: () => void;
 };
 
-const Question = ({ text }: Props) => {
-  return <Wrapper>{text}</Wrapper>;
+const Question = ({ text, onClick }: Props) => {
+  return <Wrapper onClick={onClick}>{text}</Wrapper>;
 };
 
 export default Question;

@@ -4,20 +4,27 @@ import SpeechBubble from '@components/speech-bubble';
 import { theme } from '@styles/theme';
 import { styled } from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 
-const dummy_data = [
-  {
-    id: 1,
-    text: 'var, let, const의 차이점은?',
-    type: 'gpt',
-  },
-];
+type Props = {
+  question: string;
+};
 
-const Interview = () => {
-  const [data, setData] = useState(dummy_data);
+const Interview = ({ question }: Props) => {
+  const router = useRouter();
+  const [data, setData] = useState([
+    {
+      id: 1,
+      text: question,
+      type: 'gpt',
+    },
+  ]);
   const [textarea, setTextarea] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const speechBubbleRef = useRef<HTMLDivElement>(null);
+
+  const { query } = router;
+  console.log({ query });
 
   useEffect(() => {
     console.log('data', data);
@@ -109,6 +116,16 @@ Interview.getLayout = function getLayout(page: React.ReactElement) {
     </Layout>
   );
 };
+
+export async function getServerSideProps(context: any) {
+  const { query } = context;
+  const question = query.question || '';
+  return {
+    props: {
+      question,
+    },
+  };
+}
 
 export default Interview;
 
