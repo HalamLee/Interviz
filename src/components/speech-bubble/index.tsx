@@ -17,7 +17,6 @@ const Wrapper = styled.div<{ type: string }>`
   padding: 20px;
   width: 80%;
   height: fit-content;
-  word-break: word-wrap;
   line-height: 160%;
   font-weight: ${(props) => (props.type === 'gpt' ? '700' : '500')};
   color: ${(props) =>
