@@ -26,7 +26,7 @@ const QuestionPage = () => {
         console.log(res.data.result);
         setData([...res.data.result]);
       });
-  }, []);
+  }, [query]);
 
   return (
     <Wrapper>
