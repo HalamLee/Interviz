@@ -5,6 +5,7 @@ import { theme } from '@styles/theme';
 import { styled } from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 type Props = {
   question: string;
@@ -12,6 +13,7 @@ type Props = {
 
 const Interview = ({ question }: Props) => {
   const router = useRouter();
+
   const [data, setData] = useState([
     {
       id: 1,
@@ -20,14 +22,13 @@ const Interview = ({ question }: Props) => {
     },
   ]);
   const [textarea, setTextarea] = useState('');
+  const [isClicked, setIsClicked] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const speechBubbleRef = useRef<HTMLDivElement>(null);
 
   const { query } = router;
-  console.log({ query });
 
   useEffect(() => {
-    console.log('data', data);
     const ref = speechBubbleRef.current;
     ref?.scrollTo(0, ref.scrollHeight);
 
@@ -63,6 +64,10 @@ const Interview = ({ question }: Props) => {
   };
 
   const handleClick = () => {
+    if (isClicked) {
+      alert('답변은 한번만 가능합니다.');
+      return;
+    }
     if (textarea.trim() === '') {
       alert('내용을 입력해주세요');
       setTextarea('');
@@ -72,6 +77,8 @@ const Interview = ({ question }: Props) => {
       }
       return;
     }
+
+    setIsClicked(true);
     setData((prevData) => [
       ...prevData,
       {
@@ -80,6 +87,34 @@ const Interview = ({ question }: Props) => {
         type: 'user',
       },
     ]);
+
+    axios
+      .post('/question/feedback', {
+        question: query.question,
+        userAnswer: textarea,
+      })
+      .then((res) => {
+        setData((prevData) => [
+          ...prevData,
+          {
+            id: prevData.length + 1,
+            text: res.data.result.feedback,
+            type: 'gpt',
+          },
+        ]);
+
+        // 늦게 보이는 효과
+        setTimeout(() => {
+          setData((prevData) => [
+            ...prevData,
+            {
+              id: prevData.length + 1,
+              text: res.data.result.answer,
+              type: 'gpt',
+            },
+          ]);
+        }, 1000);
+      });
     setTextarea('');
     textareaResizeHandler();
     if (textareaRef.current) {
@@ -89,9 +124,10 @@ const Interview = ({ question }: Props) => {
   return (
     <Wrapper>
       <SpeechBubbleWrapper ref={speechBubbleRef}>
-        {data.map((el) => (
-          <SpeechBubble key={el.id} type={el.type} text={el.text} />
-        ))}
+        {data &&
+          data.map((el, idx) => (
+            <SpeechBubble key={idx} type={el.type} text={el.text} />
+          ))}
       </SpeechBubbleWrapper>
       <TextareaWrapper>
         <Textarea
