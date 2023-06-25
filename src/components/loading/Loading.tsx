@@ -1,13 +1,29 @@
 import Lottie from 'lottie-react';
-import Animation from '@public/assets/loading_animation_big.json';
+import BigAnimation from '@public/assets/loading_animation_big.json';
 import { styled } from 'styled-components';
 import { theme } from '@styles/theme';
+import Image from 'next/image';
 
-const Loading = () => {
+type Props = {
+  width: string;
+  size: 'big' | 'small';
+};
+
+const Loading = ({ width, size }: Props) => {
   return (
-    <Wrapper>
+    <Wrapper width={width}>
       <AnimationWrapper>
-        <Lottie animationData={Animation} />
+        {size === 'big' ? (
+          <Lottie animationData={BigAnimation} />
+        ) : (
+          <ImageWrapper width={width}>
+            <ImageStyled
+              src={'/svg/loading_animation_small.svg'}
+              alt="loading"
+              fill
+            />
+          </ImageWrapper>
+        )}
       </AnimationWrapper>
     </Wrapper>
   );
@@ -15,14 +31,23 @@ const Loading = () => {
 
 export default Loading;
 
-const Wrapper = styled.div`
-  width: 100%;
+const Wrapper = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
   height: 100vh;
-  background-color: ${theme.colors.white};
+  background-color: inherit;
   ${theme.center};
-  gap: 90px;
 `;
 
 const AnimationWrapper = styled.div`
   width: 40%;
+`;
+
+const ImageWrapper = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.width};
+  position: relative;
+`;
+
+const ImageStyled = styled(Image)`
+  object-fit: cover;
 `;
