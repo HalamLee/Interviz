@@ -27,7 +27,7 @@ const Slider = ({ width, setSelect }: Props) => {
         defaultValue={5}
         getAriaValueText={valuetext}
         step={1}
-        min={0}
+        min={1}
         max={10}
         value={value}
         onChange={handleChange}
