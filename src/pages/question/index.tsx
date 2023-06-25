@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Loading from '@components/loading/Loading';
+import Head from 'next/head';
 
 const QuestionPage = () => {
   const router = useRouter();
@@ -36,25 +37,29 @@ const QuestionPage = () => {
   }
 
   return (
-    <Layout>
-      <Header back TextColor="main" />
-
-      <Wrapper>
-        {data &&
-          data.map((el) => (
-            <Question
-              key={el.id}
-              text={el.question}
-              onClick={() => {
-                router.push({
-                  pathname: '/interview',
-                  query: { question: el.question },
-                });
-              }}
-            />
-          ))}
-      </Wrapper>
-    </Layout>
+    <>
+      <Head>
+        <title>Interviz | Question List</title>
+      </Head>
+      <Layout>
+        <Header back TextColor="main" />
+        <Wrapper>
+          {data &&
+            data.map((el) => (
+              <Question
+                key={el.id}
+                text={el.question}
+                onClick={() => {
+                  router.push({
+                    pathname: '/interview',
+                    query: { question: el.question },
+                  });
+                }}
+              />
+            ))}
+        </Wrapper>
+      </Layout>
+    </>
   );
 };
 

@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import Loading from '@components/loading/Loading';
+import Head from 'next/head';
 
 type Props = {
   question: string;
@@ -150,10 +151,15 @@ const Interview = ({ question }: Props) => {
 
 Interview.getLayout = function getLayout(page: React.ReactElement) {
   return (
-    <Layout>
-      <Header back TextColor="white" />
-      {page}
-    </Layout>
+    <>
+      <Head>
+        <title>Interviz | Interview</title>
+      </Head>
+      <Layout>
+        <Header back TextColor="white" />
+        {page}
+      </Layout>
+    </>
   );
 };
 
