@@ -6,12 +6,14 @@ import { theme } from '@styles/theme';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Loading from '@components/loading/Loading';
 
 const QuestionPage = () => {
   const router = useRouter();
   const [data, setData] = useState<{ id: null | number; question: string }[]>(
     []
   );
+  const [loading, setLoading] = useState(true);
   const { query } = router;
 
   useEffect(() => {
@@ -25,8 +27,13 @@ const QuestionPage = () => {
       .then((res) => {
         console.log(res.data.result);
         setData([...res.data.result]);
+        setLoading(false);
       });
   }, [query]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <Wrapper>
