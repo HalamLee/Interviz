@@ -36,7 +36,7 @@ const Interview = ({ question }: Props) => {
     const handleScroll = () => {
       if (ref && ref.scrollHeight - ref.scrollTop <= ref.clientHeight) {
         // 스크롤이 다 내려갔을 때
-        ref.style.boxShadow = 'none';
+        ref.style.boxShadow = '0px -8px 10px -10px black';
       } else {
         // 스크롤이 다 내려가지 않았을 때
         ref!.style.boxShadow = '0px 8px 10px -10px black';
