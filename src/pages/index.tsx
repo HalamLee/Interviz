@@ -6,6 +6,7 @@ import {
   YEARS_OF_EXPERIENCE,
 } from '@constants/selectInfo';
 import { theme } from '@styles/theme';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { styled } from 'styled-components';
@@ -55,6 +56,9 @@ const Main = () => {
 
   return (
     <Wrapper>
+      <Comment>
+        <Link href={'/comment'}>💬 Comment 남기러 가기</Link>
+      </Comment>
       <Container>
         <InputWrapper>
           <Input
@@ -106,6 +110,27 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   ${theme.center};
+  position: relative;
+`;
+
+const Comment = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  a {
+    color: ${theme.colors.main};
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+    &:hover {
+      padding-bottom: 8px;
+      border-bottom: 3px solid ${theme.colors.main};
+    }
+  }
 `;
 
 const Container = styled.div`
