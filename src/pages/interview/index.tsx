@@ -171,7 +171,7 @@ export default Interview;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 68px);
+  height: calc(100vh - 50px);
   background-color: ${theme.colors.main};
   ${theme.center};
   gap: 40px;
