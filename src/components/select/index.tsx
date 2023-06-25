@@ -49,7 +49,7 @@ const SelectBox = styled.div<{ width: string }>`
   &::before {
     content: '⌵';
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 8px;
     color: ${theme.colors.main};
     font-size: 20px;
@@ -59,6 +59,7 @@ const Label = styled.label`
   font-size: 14px;
   margin-left: 4px;
   text-align: center;
+  cursor: pointer;
 `;
 const SelectOptions = styled.ul<{ show: 'true' | undefined }>`
   position: absolute;

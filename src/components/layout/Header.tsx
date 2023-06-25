@@ -33,10 +33,11 @@ export default Header;
 
 const Basic = styled.div`
   width: 100%;
-  height: 68px;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   color: ${theme.colors.main};
   ${theme.center};
+  padding-top: 10px;
 `;
 
 const ShadowWrapper = styled(Basic)`
