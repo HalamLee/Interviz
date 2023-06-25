@@ -2,7 +2,7 @@ import { theme } from '@styles/theme';
 import { styled } from 'styled-components';
 
 type Props = {
-  type?: 'color';
+  type: string;
   text: string;
 };
 
@@ -12,17 +12,17 @@ const SpeechBubble = ({ type, text }: Props) => {
 
 export default SpeechBubble;
 
-const Wrapper = styled.div<{ type?: 'color' }>`
+const Wrapper = styled.div<{ type: string }>`
   position: relative;
   padding: 20px;
-  width: 70%;
+  width: 80%;
   height: fit-content;
-  word-break: keep-all;
   line-height: 160%;
-  font-weight: ${(props) => (props.type ? '700' : '500')};
-  color: ${(props) => (props.type ? theme.colors.white : theme.colors.main)};
+  font-weight: ${(props) => (props.type === 'gpt' ? '700' : '500')};
+  color: ${(props) =>
+    props.type === 'gpt' ? theme.colors.white : theme.colors.main};
   background: ${(props) =>
-    props.type ? theme.colors.sub : theme.colors.white};
+    props.type === 'gpt' ? theme.colors.sub : theme.colors.white};
   border-radius: 10px;
 
   &:after {
@@ -30,12 +30,13 @@ const Wrapper = styled.div<{ type?: 'color' }>`
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid
-      ${(props) => (props.type ? theme.colors.sub : theme.colors.white)};
+      ${(props) =>
+        props.type === 'gpt' ? theme.colors.sub : theme.colors.white};
     content: '';
     position: absolute;
     top: calc(50% - 6px);
-    ${(props) => (props.type ? 'left:-14px' : 'right: -14px')};
+    ${(props) => (props.type === 'gpt' ? 'left:-14px' : 'right: -14px')};
     transform: ${(props) =>
-      props.type ? 'rotateZ(270deg)' : 'rotateZ(90deg)'};
+      props.type === 'gpt' ? 'rotateZ(270deg)' : 'rotateZ(90deg)'};
   }
 `;
