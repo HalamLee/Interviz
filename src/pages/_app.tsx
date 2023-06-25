@@ -9,6 +9,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import SplashScreen from '@components/splash-screen';
+import Head from 'next/head';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -54,11 +55,16 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout className={notoSansKr.className}>
-        {getLayout(<Component {...pageProps} />)}
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>Interviz</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Layout className={notoSansKr.className}>
+          {getLayout(<Component {...pageProps} />)}
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 }

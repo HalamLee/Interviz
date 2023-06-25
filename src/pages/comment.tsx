@@ -1,6 +1,7 @@
 import Layout from '@components/layout';
 import Header from '@components/layout/Header';
 import { theme } from '@styles/theme';
+import Head from 'next/head';
 import { styled } from 'styled-components';
 
 const Comment = () => {
@@ -29,6 +30,9 @@ const Comment = () => {
 Comment.getLayout = function getLayout(page: React.ReactElement) {
   return (
     <Layout>
+      <Head>
+        <title>Interviz | Comment</title>
+      </Head>
       <Header back TextColor="main" />
       {page}
     </Layout>
