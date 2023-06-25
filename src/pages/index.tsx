@@ -58,9 +58,9 @@ const Main = () => {
       <Container>
         <InputWrapper>
           <Input
-            placeholder="언어 / 프레임워크"
+            placeholder="기술스택을 입력해주세요."
             onChange={onChangeHandler.techStack}
-            maxLength={27}
+            maxLength={50}
           />
           <span>를 사용하는</span>
         </InputWrapper>
@@ -109,7 +109,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  width: 80%;
+  width: 85%;
   height: 100%;
   ${theme.center};
   gap: 100px;
