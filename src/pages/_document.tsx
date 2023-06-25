@@ -43,6 +43,15 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta property="og:url" content="https://interviz.vercel.app/" />
+
+          <meta property="og:title" content="Interviz" />
+
+          <meta
+            property="og:description"
+            content="🤖 chatGPT로 기술면접 준비하자 🤖"
+          />
+          <meta property="og:image" content="@public/assets/open-graph.png" />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2"
