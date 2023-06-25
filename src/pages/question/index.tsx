@@ -6,12 +6,14 @@ import { theme } from '@styles/theme';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Loading from '@components/loading/Loading';
 
 const QuestionPage = () => {
   const router = useRouter();
   const [data, setData] = useState<{ id: null | number; question: string }[]>(
     []
   );
+  const [loading, setLoading] = useState(true);
   const { query } = router;
 
   useEffect(() => {
@@ -25,33 +27,33 @@ const QuestionPage = () => {
       .then((res) => {
         console.log(res.data.result);
         setData([...res.data.result]);
+        setLoading(false);
       });
   }, [query]);
 
-  return (
-    <Wrapper>
-      {data &&
-        data.map((el) => (
-          <Question
-            key={el.id}
-            text={el.question}
-            onClick={() => {
-              router.push({
-                pathname: '/interview',
-                query: { question: el.question },
-              });
-            }}
-          />
-        ))}
-    </Wrapper>
-  );
-};
+  if (loading) {
+    return <Loading size={'big'} width={'100%'} />;
+  }
 
-QuestionPage.getLayout = function getLayout(page: React.ReactElement) {
   return (
     <Layout>
       <Header back TextColor="main" />
-      {page}
+
+      <Wrapper>
+        {data &&
+          data.map((el) => (
+            <Question
+              key={el.id}
+              text={el.question}
+              onClick={() => {
+                router.push({
+                  pathname: '/interview',
+                  query: { question: el.question },
+                });
+              }}
+            />
+          ))}
+      </Wrapper>
     </Layout>
   );
 };
