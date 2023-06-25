@@ -56,9 +56,21 @@ const Content = styled.div`
 
   h1 {
     font-size: 48px;
+    ${theme.media.mobile2} {
+      font-size: 36px;
+    }
+    ${theme.media.mobile1} {
+      font-size: 24px;
+    }
   }
 
   span {
     font-size: 20px;
+    ${theme.media.mobile2} {
+      font-size: 14px;
+    }
+    ${theme.media.mobile1} {
+      font-size: 10px;
+    }
   }
 `;
