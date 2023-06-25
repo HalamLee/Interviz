@@ -32,33 +32,28 @@ const QuestionPage = () => {
   }, [query]);
 
   if (loading) {
-    return <Loading />;
+    return <Loading size={'big'} width={'100%'} />;
   }
 
   return (
-    <Wrapper>
-      {data &&
-        data.map((el) => (
-          <Question
-            key={el.id}
-            text={el.question}
-            onClick={() => {
-              router.push({
-                pathname: '/interview',
-                query: { question: el.question },
-              });
-            }}
-          />
-        ))}
-    </Wrapper>
-  );
-};
-
-QuestionPage.getLayout = function getLayout(page: React.ReactElement) {
-  return (
     <Layout>
       <Header back TextColor="main" />
-      {page}
+
+      <Wrapper>
+        {data &&
+          data.map((el) => (
+            <Question
+              key={el.id}
+              text={el.question}
+              onClick={() => {
+                router.push({
+                  pathname: '/interview',
+                  query: { question: el.question },
+                });
+              }}
+            />
+          ))}
+      </Wrapper>
     </Layout>
   );
 };
