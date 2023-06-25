@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://i.ibb.co/6Y8cz4W/248562547-c4627b49-3236-4d33-b302-9b9fbe5022f1.png"
+            content="https://i.ibb.co/qYbtWtY/image.png"
           />
           <link
             rel="stylesheet"
