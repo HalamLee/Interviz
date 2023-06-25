@@ -6,6 +6,7 @@ import { styled } from 'styled-components';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Loading from '@components/loading/Loading';
 
 type Props = {
   question: string;
@@ -13,7 +14,7 @@ type Props = {
 
 const Interview = ({ question }: Props) => {
   const router = useRouter();
-
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([
     {
       id: 1,
@@ -77,7 +78,7 @@ const Interview = ({ question }: Props) => {
       }
       return;
     }
-
+    setLoading(true);
     setIsClicked(true);
     setData((prevData) => [
       ...prevData,
@@ -102,6 +103,7 @@ const Interview = ({ question }: Props) => {
             type: 'gpt',
           },
         ]);
+        setLoading(false);
 
         // 늦게 보이는 효과
         setTimeout(() => {
@@ -121,6 +123,7 @@ const Interview = ({ question }: Props) => {
       textareaRef.current.style.height = '46px';
     }
   };
+
   return (
     <Wrapper>
       <SpeechBubbleWrapper ref={speechBubbleRef}>
@@ -128,6 +131,7 @@ const Interview = ({ question }: Props) => {
           data.map((el, idx) => (
             <SpeechBubble key={idx} type={el.type} text={el.text} />
           ))}
+        {loading && <Loading size={'small'} width={'50px'} />}
       </SpeechBubbleWrapper>
       <TextareaWrapper>
         <Textarea
