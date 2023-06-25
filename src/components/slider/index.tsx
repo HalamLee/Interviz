@@ -44,34 +44,45 @@ const Wrapper = styled.div<{ width: string }>`
   width: ${(props) => props.width};
 `;
 
-const CustomSlider = styled(MUISlider)({
-  color: theme.colors.main,
-  height: 10,
-  '& .MuiSlider-mark': {
-    display: 'none',
-  },
-  '& .MuiSlider-thumb': {
-    height: 24,
-    width: 24,
-    border: '2px solid currentColor',
-    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
-      boxShadow: 'inherit',
-    },
-    '&:before': {
-      display: 'none',
-    },
-  },
-  '& .MuiSlider-valueLabel': {
-    lineHeight: 1.2,
-    fontSize: 14,
-    fontWeight: 700,
-    background: 'unset',
-    padding: '6px 8px',
-    width: 35,
-    height: 26,
-    top: -15,
-    borderRadius: 12,
-    fontFamily: notoSansKr.style,
-    backgroundColor: theme.colors.main,
-  },
-});
+const CustomSlider = styled(MUISlider)`
+  .MuiSlider-rail {
+    width: 100%;
+    height: 10px;
+  }
+
+  .MuiSlider-track {
+    background-color: ${theme.colors.main};
+    height: 10px;
+  }
+
+  .MuiSlider-mark {
+    display: none;
+  }
+  .MuiSlider-thumb {
+    height: 24px;
+    width: 24px;
+    background-color: ${theme.colors.main};
+    :focus,
+    :hover,
+    .Mui-active,
+    .Mui-focusVisible {
+      box-shadow: inherit;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .MuiSlider-valueLabel {
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 700;
+    background: unset;
+    padding: 6px 8px;
+    width: 35px;
+    height: 26px;
+    top: -15px;
+    border-radius: 12px;
+    font-family: ${notoSansKr.style};
+    background-color: ${theme.colors.main};
+  }
+`;
