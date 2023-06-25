@@ -51,7 +51,10 @@ export default class MyDocument extends Document {
             property="og:description"
             content="🤖 chatGPT로 기술면접 준비하자 🤖"
           />
-          <meta property="og:image" content="@public/assets/open-graph.png" />
+          <meta
+            property="og:image"
+            content="https://i.ibb.co/6Y8cz4W/248562547-c4627b49-3236-4d33-b302-9b9fbe5022f1.png"
+          />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2"
